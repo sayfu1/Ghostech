@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost Tech - Sustainable Fishing Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0,78,144,0.8) 0%, rgba(0,147,175,0.8) 100%);
+        }
+        .hero-image {
+            background-image: url('https://imgs.search.brave.com/OzxpY0ieW57pNcGWQceGPxS7KD_GgKLxvEQ14f3CY-g/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by90/d28tbWVuLWZpc2hp/bmctY2FsbS1sYWtl/LWJsdWUtc2t5XzE4/MTYyNC00OTIyNy5q/cGc_c2VtdD1haXNf/aHlicmlkJnc9NzQw');
+            background-size: cover;
+            background-position: center;
+        }
+        .wave-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 150px;
+        }
+        .wave-divider .shape-fill {
+            fill: #f8fafc;
+        }
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #004e90 0%, #0093af 100%);
+            color: white;
+            font-size: 30px;
+        }
+        .timeline-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: #004e90;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+        }
+        .animated-bg {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite linear;
+        }
+        @keyframes shimmer {
+            from {
+                background-position: 200% 0;
+            }
+            to {
+                background-position: -200% 0;
+            }
+        }
+        .team-member-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+        }
+        .team-member-frame {
+            width: 192px;
+            height: 192px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #dbeafe;
+            margin: 0 auto 1rem;
+            position: relative;
+            background-color: #f3f4f6;
+        }
+        .team-member-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-blue-900 font-bold text-xl">GHOST <span class="text-blue-500">TECH</span></span>
+                    </div>
+                    <div class="hidden md:block ml-10">
+                        <div class="flex space-x-4">
+                            <a href="#home" class="text-blue-900 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                            <a href="#problem" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">The Problem</a>
+                            <a href="#solution" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Our Solution</a>
+                            <a href="#features" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Features</a>
+                            <a href="#process" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">How It Works</a>
+                            <a href="#preorder" class="text-gray-700 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Pre-order</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#invest" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium">Invest</a>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-500 hover:bg-gray-100 focus:outline-none">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-md">
+                <a href="#home" class="text-blue-900 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#problem" class="text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">The Problem</a>
+                <a href="#solution" class="text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Our Solution</a>
+                <a href="#features" class="text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Features</a>
+                <a href="#process" class="text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">How It Works</a>
+                <a href="#preorder" class="text-gray-700 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Pre-order</a>
+                <a href="#invest" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-md text-base font-medium inline-block mt-2">Invest</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative hero-image h-screen flex items-center justify-center text-white">
+        <div class="hero-gradient absolute inset-0"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Fish Without Leaving a Trace</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Ghost Thread is the world's first fully biodegradable fishing line that disappears in 5-7 years without harming marine life.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#preorder" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-md text-lg font-semibold">Pre-order Now</a>
+                <a href="#invest" class="bg-transparent hover:bg-white hover:text-blue-900 border-2 border-white text-white px-8 py-4 rounded-md text-lg font-semibold">Invest in Us</a>
+            </div>
+        </div>
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,233.38-49.8C1192.49,29,1200,38.89,1200,52.47V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">The Plastic Problem in Our Oceans</h2>
+                <div class="border-b-2 border-blue-500 w-20 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-blue-100 rounded-full p-3 mr-4">
+                            <i class="fas fa-fish text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-blue-900">448,000+ Miles of Line Pollute Our Waters</h3>
+                            <p class="text-gray-600 mt-2">Lost and discarded fishing line stretches across rivers, lakes, and oceans, creating persistent hazards for habitats and wildlife.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-blue-100 rounded-full p-3 mr-4">
+                            <i class="fas fa-trash text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-blue-900">300,000 Marine Animals Killed Each Year</h3>
+                            <p class="text-gray-600 mt-2">Whales, dolphins, turtles, and seabirds die annually after becoming entangled in abandoned nets and lines.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-blue-100 rounded-full p-3 mr-4">
+                            <i class="fas fa-hourglass-end text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-blue-900">Conventional Line Lasts 600–10,000 Years</h3>
+                            <p class="text-gray-600 mt-2">Standard nylon monofilament can persist for centuries in water, slowly fragmenting into microplastics rather than truly breaking down.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-xl shadow-xl border border-gray-200">
+                    <img src="https://www.ecowatch.com/wp-content/uploads/2021/10/1376338672-origin.jpg" alt="Marine animals entangled in ghost fishing gear" class="w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="py-20 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Ghost Thread: The Future of Fishing</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Strong, reliable fishing performance without the environmental guilt</p>
+                <div class="border-b-2 border-blue-500 w-20 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="relative">
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-100 rounded-full p-2 mr-4">
+                                <i class="fas fa-times text-red-500"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Traditional Fishing Line</h3>
+                        </div>
+                        <ul class="space-y-3 text-gray-600 pl-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mr-2 mt-1"></i>
+                                <span>Lasts forever - never fully decomposes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mr-2 mt-1"></i>
+                                <span>Contributes to ocean microplastics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mr-2 mt-1"></i>
+                                <span>Endangers marine life for generations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mr-2 mt-1"></i>
+                                <span>Made from petroleum-based materials</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-red-500 text-white px-4 py-2 rounded-lg shadow-md">
+                        <i class="fas fa-prohibited mr-2"></i> Unsustainable
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-blue-200 border-2">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-green-100 rounded-full p-2 mr-4">
+                                <i class="fas fa-check text-green-500"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-800">Ghost Thread</h3>
+                        </div>
+                        <ul class="space-y-3 text-gray-600 pl-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mr-2 mt-1"></i>
+                                <span>Fully biodegrades in 5-7 years</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mr-2 mt-1"></i>
+                                <span>Leaves no harmful microplastics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mr-2 mt-1"></i>
+                                <span>Safe for marine ecosystems</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-400 mr-2 mt-1"></i>
+                                <span>Made from plant-based polymers</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md">
+                        <i class="fas fa-leaf mr-2"></i> Eco-Friendly
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-3">
+                    <div class="bg-blue-900 text-white p-8 flex flex-col items-center justify-center text-center">
+                        <i class="fas fa-recycle text-5xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Circular Economy</h3>
+                        <p>Designed from the start to return safely to nature</p>
+                    </div>
+                    <div class="bg-blue2-800 text-white p-8 flex flex-col items-center justify-center text-center">
+                        <i class="fas fa-fish text-5xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Ocean Safe</h3>
+                        <p>No toxic residues left behind in marine ecosystems</p>
+                    </div>
+                    <div class="bg-blue-700 text-white p-8 flex flex-col items-center justify-center text-center">
+                        <i class="fas fa-flag text-5xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Industry Changing</h3>
+                        <p>The first truly sustainable fishing line</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Performance Meets Sustainability</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Ghost Thread delivers everything anglers need without compromise</p>
+                <div class="border-b-2 border-blue-500 w-20 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center px-6 py-8 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="feature-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-2">8 lb Line Strength</h3>
+                    <p class="text-gray-600">Tested and reliable — perfect balance of power and finesse for freshwater anglers.</p>
+                </div>
+                
+                <div class="text-center px-6 py-8 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="feature-icon">
+                        <i class="fas fa-hourglass-half"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-2">3–5 Year Breakdown</h3>
+                    <p class="text-gray-600">Maintains integrity while in use, then safely decomposes in natural water environments.</p>
+                </div>
+                
+                <div class="text-center px-6 py-8 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="feature-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-2">Plant-Based Material</h3>
+                    <p class="text-gray-600">Crafted from renewable, bio-sourced polymers instead of traditional plastics.</p>
+                </div>
+                
+                <div class="text-center px-6 py-8 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="feature-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-2">Freshwater Optimized</h3>
+                    <p class="text-gray-600">Holds performance longer in lakes and rivers, breaking down faster only in harsher conditions.</p>
+                </div>
+                
+                <div class="text-center px-6 py-8 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="feature-icon">
+                        <i class="fas fa-redo"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-2">Low Memory</h3>
+                    <p class="text-gray-600">Minimizes coiling for smoother, more accurate casts.</p>
+                </div>
+                
+                <div class="text-center px-6 py-8 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="feature-icon">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-2">High Sensitivity</h3>
+                    <p class="text-gray-600">Delivers precise bite detection and feedback so you never miss a strike.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works (Timeline) -->
+    <section id="process" class="py-20 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">The Ghost Thread Lifecycle</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">How our innovative fishing line safely returns to nature</p>
+                <div class="border-b-2 border-blue-500 w-20 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="timeline-container">
+                <div class="timeline relative">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item mb-16 relative">
+                        <div class="timeline-content bg-white p-6 rounded-xl shadow-md md:w-5/12 ml-auto relative">
+                            <div class="absolute -left-6 top-6 w-6 h-6 bg-blue-600 rounded-full border-4 border-white"></div>
+                            <div class="flex items-center mb-3">
+                                <div class="bg-blue-100 rounded-full p-2 mr-4">
+                                    <i class="fas fa-fishing-rod text-blue-600"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-blue-900">YEAR 0: First Use</h3>
+                            </div>
+                            <p class="text-gray-600">Ghost Thread performs identically to premium nylon fishing line, with all the same sensitivity, strength and castability that anglers expect.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item mb-16 relative">
+                        <div class="timeline-content bg-white p-6 rounded-xl shadow-md md:w-5/12 mr-auto relative">
+                            <div class="absolute -right-6 top-6 w-6 h-6 bg-blue-600 rounded-full border-4 border-white md:right-auto md:left-0"></div>
+                            <div class="flex items-center mb-3">
+                                <div class="bg-blue-100 rounded-full p-2 mr-4">
+                                    <i class="fas fa-clock text-blue-600"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-blue-900">YEAR 1-3: Saltwater Activation</h3>
+                            </div>
+                            <p class="text-gray-600">After exposure to saltwater, the proprietary biodegradable coating begins breaking down. The line remains fully functional throughout this period.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item mb-16 relative">
+                        <div class="timeline-content bg-white p-6 rounded-xl shadow-md md:w-5/12 ml-auto relative">
+                            <div class="absolute -left-6 top-6 w-6 h-6 bg-blue-600 rounded-full border-4 border-white"></div>
+                            <div class="flex items-center mb-3">
+                                <div class="bg-blue-100 rounded-full p-2 mr-4">
+                                    <i class="fas fa-microscope text-blue-600"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-blue-900">YEAR 4-5: Structural Breakdown</h3>
+                            </div>
+                            <p class="text-gray-600">Material begins fragmenting into smaller pieces that marine organisms can naturally process. Tensile strength gradually decreases, preventing accidental entanglement.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 4 -->
+                    <div class="timeline-item mb-16 relative">
+                        <div class="timeline-content bg-white p-6 rounded-xl shadow-md md:w-5/12 mr-auto relative">
+                            <div class="absolute -right-6 top-6 w-6 h-6 bg-blue-600 rounded-full border-4 border-white md:right-auto md:left-0"></div>
+                            <div class="flex items-center mb-3">
+                                <div class="bg-blue-100 rounded-full p-2 mr-4">
+                                    <i class="fas fa-bacteria text-blue-600"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-blue-900">YEAR 6-7: Complete Biodegradation</h3>
+                            </div>
+                            <p class="text-gray-600">Microorganisms fully metabolize the line into harmless organic compounds that become part of the natural marine nutrient cycle, with no toxic byproducts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <div class="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300">
+                    <a href="#preorder" class="text-lg font-semibold">Be Part of the Solution - Preorder Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">The Ghost Tech Team</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Passionate innovators working to revolutionize fishing</p>
+                <div class="border-b-2 border-blue-500 w-20 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div class="text-center">
+                    <div class="team-member-frame">
+                        <img src="andrew.jpg" alt="Andrew Burk">
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-1">Andrew Burk</h3>
+                    <p class="text-blue-600 font-medium mb-2">Financial Manager</p>
+                    <p class="text-gray-600">Marine biologist and fishing enthusiast</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="team-member-frame">
+                        <img src="cephas.jpg" alt="Cephas Amboji">
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-1">Cephas Amboji</h3>
+                    <p class="text-blue-600 font-medium mb-2">Social Media Manager</p>
+                    <p class="text-gray-600">Digital marketing expert and content creation specialist</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="team-member-frame">
+                        <img src="damian.jpg" alt="Damian Kepka">
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-1">Damian Kepka</h3>
+                    <p class="text-blue-600 font-medium mb-2">Product Designer</p>
+                    <p class="text-gray-600">Materials engineer with fishing industry experience</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="team-member-frame">
+                        <img src="saif.jpg" alt="Saif Sameer">
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-1">Saif Sameer</h3>
+                    <p class="text-blue-600 font-medium mb-2">General Manager</p>
+                    <p class="text-gray-600">Environmental policy expert and fishing advocate</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="team-member-frame">
+                        <img src="jack.jpg" alt="Jack Scanlan">
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-900 mb-1">Jack Scanlan</h3>
+                    <p class="text-blue-600 font-medium mb-2">Business Development Manager</p>
+                    <p class="text-gray-600">Strategic partnerships and market expansion expert</p>
+                </div>
+            </div>
+
+            <div class="mt-12 flex justify-center">
+                <div class="max-w-2xl w-full rounded-2xl overflow-hidden shadow-lg border border-blue-100">
+                    <img src="team.jpg" alt="Ghost Tech founding team" class="w-full h-auto object-cover" style="display: block;">
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <div class="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300">
+                    <a href="#invest" class="text-lg font-semibold">Join Our Mission</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preorder Section -->
+    <section id="preorder" class="py-20 bg-blue-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="bg-blue-900 text-white p-12 flex flex-col justify-center">
+                        <div class="mb-6">
+                            <h2 class="text-3xl font-bold mb-4">Join the Fishing Revolution</h2>
+                            <p class="text-blue-100">Be among the first to fish sustainably with Ghost Thread</p>
+                        </div>
+                        
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-300 mt-1 mr-2"></i>
+                                <span>Early access to Ghost Thread before public release</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-300 mt-1 mr-2"></i>
+                                <span>Exclusive 15% discount on your first order</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-300 mt-1 mr-2"></i>
+                                <span>VIP updates on product development</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="p-12">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-6">Get Early Access</h3>
+                        <form id="preorder-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                            </div>
+                            
+                            <div>
+                                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300">
+                                    Reserve Your Ghost Thread
+                                </button>
+                            </div>
+                            
+                            <p class="text-sm text-gray-500">We respect your privacy. Your information will only be used to contact you about this preorder.</p>
+                        </form>
+                        
+                        <div id="preorder-success" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-lg">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-check-circle text-green-500"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="text-sm font-medium text-green-800">Success!</h3>
+                                    <div class="mt-2 text-sm text-green-700">
+                                        <p>Your preorder request has been submitted. We'll contact you shortly with more details.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investor Section -->
+    <section id="invest" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Invest in Sustainable Fishing</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Join our mission to revolutionize the fishing industry</p>
+                <div class="border-b-2 border-blue-500 w-20 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-blue-900 mb-4">Market Opportunity</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-dollar-sign text-blue-500 mr-2 mt-1"></i>
+                            <span>$3.28B global fishing line market</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chart-line text-blue-500 mr-2 mt-1"></i>
+                            <span>Rising demand for eco-friendly tackle solutions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-leaf text-blue-500 mr-2 mt-1"></i>
+                            <span>Ghost Tech: one of the first biodegradable freshwater lines</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-blue-900 mb-4">Sustainability Impact</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-percentage text-blue-500 mr-2 mt-1"></i>
+                            <span>Fishing line makes up to 10% of ocean plastic pollution</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-shield-alt text-blue-500 mr-2 mt-1"></i>
+                            <span>Biodegradable line reduces risk to fish, birds & marine life</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-water text-blue-500 mr-2 mt-1"></i>
+                            <span>Designed for responsible freshwater angling</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold text-blue-900 mb-4">Investment Details</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-door-open text-blue-500 mr-2 mt-1"></i>
+                            <span>Pre-seed funding round currently open</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-dollar-sign text-blue-500 mr-2 mt-1"></i>
+                            <span>$2,500 raised from early supporters</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-trophy text-blue-500 mr-2 mt-1"></i>
+                            <span>Attended multiple pitch competitions</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="p-12">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-6">Investor Interest Form</h3>
+                    <form id="investor-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="investor-name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="investor-name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                            </div>
+                            
+                            <div>
+                                <label for="investor-email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="investor-email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                            </div>
+                            
+                            <div>
+                                <label for="investor-company" class="block text-gray-700 font-medium mb-2">Company/Organization</label>
+                                <input type="text" id="investor-company" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                            </div>
+                            
+                            <div>
+                                <label for="investor-phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="investor-phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                            </div>
+                            
+                            <div>
+                                <label for="investor-amount" class="block text-gray-700 font-medium mb-2">Investment Interest Amount</label>
+                                <select id="investor-amount" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                                    <option value="">Select range</option>
+                                    <option value="$25K - $100K">$25K - $100K</option>
+                                    <option value="$100K - $500K">$100K - $500K</option>
+                                    <option value="$500K+">$500K+</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="investor-type" class="block text-gray-700 font-medium mb-2">Investor Type</label>
+                                <select id="investor-type" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                                    <option value="">Select type</option>
+                                    <option value="Angel Investor">Angel Investor</option>
+                                    <option value="Venture Capital">Venture Capital</option>
+                                    <option value="Corporate Investor">Corporate Investor</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="investor-message" class="block text-gray-700 font-medium mb-2">Message (Optional)</label>
+                            <textarea id="investor-message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-blue-500"></textarea>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300">
+                                Request Investment Information
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div id="investor-success" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-lg">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-sm font-medium text-green-800">Thank you!</h3>
+                                <div class="mt-2 text-sm text-green-700">
+                                    <p>Your investment inquiry has been submitted. Our team will contact you within 48 hours to discuss opportunities.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-blue-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
+                <p class="text-xl text-blue-200 max-w-3xl mx-auto">Have questions about Ghost Thread? We'd love to hear from you.</p>
+                <div class="border-b-2 border-blue-400 w-20 mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Address</h4>
+                                <p class="text-blue-300">300 Church Street, Lake Zurich, Illinois 60047</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-blue-800 p-3 rounded-lg mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Email</h4>
+                                <p class="text-blue-300">ghosttechfishing@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-800 hover:bg-blue-700 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-blue-800 hover:bg-blue-700 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-blue-800 hover:bg-blue-700 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-blue-800 hover:bg-blue-700 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="contact-name" class="block text-blue-200 font-medium mb-2">Name</label>
+                            <input type="text" id="contact-name" class="w-full px-4 py-3 rounded-lg border border-blue-700 bg-blue-800 text-white placeholder-blue-400 focus:border-blue-500 focus:ring-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="contact-email" class="block text-blue-200 font-medium mb-2">Email</label>
+                            <input type="email" id="contact-email" class="w-full px-4 py-3 rounded-lg border border-blue-700 bg-blue-800 text-white placeholder-blue-400 focus:border-blue-500 focus:ring-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="contact-subject" class="block text-blue-200 font-medium mb-2">Subject</label>
+                            <input type="text" id="contact-subject" class="w-full px-4 py-3 rounded-lg border border-blue-700 bg-blue-800 text-white placeholder-blue-400 focus:border-blue-500 focus:ring-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="contact-message" class="block text-blue-200 font-medium mb-2">Message</label>
+                            <textarea id="contact-message" rows="4" class="w-full px-4 py-3 rounded-lg border border-blue-700 bg-blue-800 text-white placeholder-blue-400 focus:border-blue-500 focus:ring-blue-500"></textarea>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div id="contact-success" class="hidden mt-6 p-4 bg-blue-700 text-white rounded-lg">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-check-circle text-blue-300"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-sm font-medium">Message Sent!</h3>
+                                <div class="mt-2 text-sm text-blue-200">
+                                    <p>Thanks for reaching out! We'll get back to you within 24 hours.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">GHOST TECH</h4>
+                    <p class="text-gray-400">Revolutionizing fishing with sustainable solutions that protect our oceans for future generations.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Product</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Ghost Thread</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Technology</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Sustainability</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Pre-order</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Team</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Mission</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Investors</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Opportunities</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Financials</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">News</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2023 Ghost Tech. All rights reserved.
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700 transition-colors duration-300 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Form submissions
+        document.getElementById('preorder-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('preorder-form').classList.add('hidden');
+            document.getElementById('preorder-success').classList.remove('hidden');
+        });
+
+        document.getElementById('investor-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('investor-form').classList.add('hidden');
+            document.getElementById('investor-success').classList.remove('hidden');
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('contact-form').classList.add('hidden');
+            document.getElementById('contact-success').classList.remove('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
